@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # Spring Boot application service
+  spring-boot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-db:5432/make_up
+      SPRING_DATASOURCE_USERNAME: make_up
+      SPRING_DATASOURCE_PASSWORD: make_up
+
+  # PostgreSQL database service
+  postgres-db:
+    image: postgres
+    environment:
+      POSTGRES_DB: make_up
+      POSTGRES_USER: make_up
+      POSTGRES_PASSWORD: make_up
