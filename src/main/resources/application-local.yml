@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: make-up-back
+  datasource:
+    url: jdbc:postgresql://localhost:5432/make_up
+    username: make_up
+    password: make_up
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
