@@ -23,7 +23,7 @@ jobs:
         run: sudo apt-get install -y maven
 
       - name: Build Spring Boot application
-        run: mvn -f .pom.xml clean package -DskipTests
+        run: mvn -f pom.xml clean package -DskipTests
         working-directory: .
 
       - name: Build Docker Image
