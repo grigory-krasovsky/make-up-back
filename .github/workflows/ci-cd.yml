@@ -43,4 +43,4 @@ jobs:
 
       - name: Push Docker Image
         run: |
-          docker push iceteagreen/make-up-repository:latest
+          docker push iceteagreen/make-up-repository:app
