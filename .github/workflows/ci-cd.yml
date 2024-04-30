@@ -18,6 +18,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+          cache: 'maven'
 
 #      - name: Install Maven
 #        run: sudo apt-get install -y maven
