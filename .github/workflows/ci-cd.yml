@@ -32,7 +32,7 @@ jobs:
 
       - name: Tag Docker Image
         run: |
-          docker tag app iceteagreen/make-up-repository:latest
+          docker tag make-up-back-app iceteagreen/make-up-repository:latest
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
