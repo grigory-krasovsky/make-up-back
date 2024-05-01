@@ -20,9 +20,6 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
-#      - name: Install Maven
-#        run: sudo apt-get install -y maven
-
       - name: Build Spring Boot application
         run: mvn -f pom.xml clean package -DskipTests
         working-directory: .
@@ -56,4 +53,12 @@ jobs:
             sudo docker pull iceteagreen/make-up-repository:latest &&
             sudo docker stop app &&
             sudo docker rm app &&
-            sudo docker run -d   -p 8080:8080   --name app   --link postgres-db   -e SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-db:5432/make_up   -e SPRING_DATASOURCE_USERNAME=make_up   -e SPRING_DATASOURCE_PASSWORD=make_up   iceteagreen/make-up-repository:latest
+            sudo docker run -d \
+            -p 8080:8080 \
+            --name app \
+            --link postgres-db \
+            -e SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-db:5432/make_up \
+            -e SPRING_DATASOURCE_USERNAME=make_up \
+            -e SPRING_DATASOURCE_PASSWORD=make_up \
+            -e SPRING_PROFILES_ACTIVE=prod \
+            iceteagreen/make-up-repository:latest
