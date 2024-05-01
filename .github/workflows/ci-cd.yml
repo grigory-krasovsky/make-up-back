@@ -53,4 +53,4 @@ jobs:
           username: ${{ secrets.AWS_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.AWS_USERNAME }}@${{ secrets.EC2_HOST }}
+            ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@35.156.40.32
