@@ -24,3 +24,8 @@ services:
       POSTGRES_DB: make_up
       POSTGRES_USER: make_up
       POSTGRES_PASSWORD: make_up
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30
