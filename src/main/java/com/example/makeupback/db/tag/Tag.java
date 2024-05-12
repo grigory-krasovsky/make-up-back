@@ -14,6 +14,8 @@ public class Tag {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
+    private String title;
+
+    @ManyToMany(mappedBy = "tags")
     private List<Palette> palettes;
 }

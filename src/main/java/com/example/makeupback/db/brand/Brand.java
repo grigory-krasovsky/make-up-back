@@ -14,6 +14,8 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String title;
+
     @OneToMany
     private List<Palette> palettes;
 }

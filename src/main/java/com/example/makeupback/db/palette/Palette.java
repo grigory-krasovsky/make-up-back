@@ -8,6 +8,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "palettes")
@@ -27,7 +28,10 @@ public class Palette {
     @Fetch(FetchMode.JOIN)
     private Brand brand;
 
-    @ManyToOne
-    @Fetch(FetchMode.JOIN)
-    private Tag tag;
+    @ManyToMany
+    @JoinTable(
+            name = "palette_tag",
+            joinColumns = @JoinColumn(name = "p_id"),
+            inverseJoinColumns = @JoinColumn(name = "t_id"))
+    private List<Tag> tags;
 }
