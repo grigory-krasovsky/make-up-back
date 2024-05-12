@@ -1,8 +1,12 @@
 package com.example.makeupback.db.brand;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 
 @Builder
+@AllArgsConstructor
+@Data
 public class BrandDto {
     private String title;
     private Long id;
