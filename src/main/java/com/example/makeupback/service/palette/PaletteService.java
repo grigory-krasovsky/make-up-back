@@ -18,8 +18,8 @@ public class PaletteService {
 //        return paletteRepository.findById(id).orElse(null);
 //    }
 
-    public List<Palette> findAll() {
-        return paletteRepository.findAll();
+    public List<PaletteDto> findAll() {
+        return paletteRepository.findAll().stream().map(PaletteDto::from).toList();
     }
 
     public void create(PaletteDto dto) {
