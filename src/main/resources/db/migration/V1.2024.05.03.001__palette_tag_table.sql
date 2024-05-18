@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS palette_tag (
-                                        id BIGINT PRIMARY KEY,
+                                        id BIGINT PRIMARY KEY GENERATED  BY DEFAULT AS IDENTITY,
                                         p_id BIGINT,
                                         t_id BIGINT
 );
