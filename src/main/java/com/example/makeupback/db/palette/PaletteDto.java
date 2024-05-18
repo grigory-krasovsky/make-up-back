@@ -28,6 +28,7 @@ public class PaletteDto {
     @JsonProperty("description")
     private String description;
 
+    @JsonProperty("image")
     private String image;
 
     @JsonProperty("rating")
