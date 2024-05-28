@@ -41,7 +41,8 @@ public class Palette {
     private List<Tag> tags;
 
     public Palette updateBy(Palette source) {
-//        this.brand = source.getBrand();
+        this.brand = source.getBrand();
+        this.tags = source.getTags();
         this.image = source.getImage();
         this.name = source.getName();
         this.price = source.getPrice();

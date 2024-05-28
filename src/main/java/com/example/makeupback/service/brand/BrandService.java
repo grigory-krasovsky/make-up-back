@@ -1,5 +1,6 @@
 package com.example.makeupback.service.brand;
 
+import com.example.makeupback.db.brand.Brand;
 import com.example.makeupback.db.brand.BrandDto;
 import com.example.makeupback.db.brand.BrandRepository;
 import lombok.AllArgsConstructor;
@@ -15,5 +16,8 @@ public class BrandService {
 
     public List<BrandDto> getAllBrands() {
         return brandRepository.findAll().stream().map(BrandDto::from).toList();
+    }
+    public Brand getBrandById(Long id) {
+        return brandRepository.findById(id).orElse(null);
     }
 }

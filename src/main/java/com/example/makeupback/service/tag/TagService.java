@@ -1,5 +1,6 @@
 package com.example.makeupback.service.tag;
 
+import com.example.makeupback.db.tag.Tag;
 import com.example.makeupback.db.tag.TagDto;
 import com.example.makeupback.db.tag.TagRepository;
 import lombok.AllArgsConstructor;
@@ -14,5 +15,9 @@ public class TagService {
 
     public List<TagDto> getAllTags() {
         return tagRepository.findAll().stream().map(TagDto::from).toList();
+    }
+
+    public List<Tag> getAllTagsByIdIn(List<Long> ids) {
+        return tagRepository.findAllByIdIn(ids);
     }
 }

@@ -2,7 +2,7 @@ spring:
   application:
     name: make-up-back
   datasource:
-    url: jdbc:postgresql://localhost:5432/make_up
+    url: jdbc:postgresql://35.156.40.32:5432/make_up
     username: make_up
     password: make_up
     driver-class-name: org.postgresql.Driver

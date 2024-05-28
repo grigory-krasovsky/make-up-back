@@ -20,6 +20,4 @@ public class Brand {
 
     private String title;
 
-    @OneToMany
-    private List<Palette> palettes;
 }
