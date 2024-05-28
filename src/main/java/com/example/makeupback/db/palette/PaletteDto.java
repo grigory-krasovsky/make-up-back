@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Builder
-public class PaletteDto {
+public class PaletteDto implements Comparable<PaletteDto> {
 
 
     @JsonProperty("id")
@@ -65,5 +65,10 @@ public class PaletteDto {
                 .tags(this.getTags().stream().map(TagDto::to).toList())
                 .brand(BrandDto.to(this.getBrand()))
                 .build();
+    }
+
+    @Override
+    public int compareTo(PaletteDto o) {
+        return Long.compare(this.id, o.id);
     }
 }
