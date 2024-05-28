@@ -28,7 +28,7 @@ public class PaletteController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @SneakyThrows
     public List<PaletteDto> getAll() {
-        return paletteService.findAll();
+        return paletteService.findAll().stream().sorted().toList();
     }
 
     @PutMapping(value = "/{id}")
