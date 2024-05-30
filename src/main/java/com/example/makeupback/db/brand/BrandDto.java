@@ -17,6 +17,7 @@ public class BrandDto {
     public static BrandDto from(Brand brand) {
         return BrandDto.builder()
                 .title(brand.getTitle())
+
                 .id(brand.getId())
                 .build();
     }
